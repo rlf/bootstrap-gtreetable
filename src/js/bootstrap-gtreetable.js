@@ -125,6 +125,10 @@
                     return data;
                 }
             }
+            
+            if (this.options.data && this.options.data[nodeId]) {
+              return this.options.data[nodeId];
+            }
 
             return $.ajax({
                 type: 'GET',
