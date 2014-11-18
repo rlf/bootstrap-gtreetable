@@ -125,9 +125,11 @@
                     return data;
                 }
             }
-            
+
             if (this.options.data && this.options.data[nodeId]) {
-              return this.options.data[nodeId];
+              return {done: function(x) {
+                  x(this.options.data[nodeId]);
+              }};
             }
 
             return $.ajax({
