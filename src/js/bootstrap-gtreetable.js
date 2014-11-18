@@ -127,8 +127,9 @@
             }
 
             if (this.options.data && this.options.data[nodeId]) {
+              var nodeData = this.options.data[nodeId];
               return {done: function(x) {
-                  x(this.options.data[nodeId]);
+                  x(nodeData);
               }};
             }
 
